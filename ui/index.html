@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+    button {
+	padding: 16px 32px;
+	font-size: 17px;
+	border-radius: 12px;
+	background: magenta;
+
+    }
+   body {
+	   background: #33c1ff;
+      text-align: center;
+    }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Tauri Robot Control</h1>
+    <table align="center">
+ <tr>
+    <th></th>
+    <th><button onclick="forward()">^</button></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td><button onclick="left()"><</button></td>
+    <td></td>
+    <td><button onclick="right()">></button></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><button onclick="backward()">v</button></td>
+    <td></td>
+  </tr>
+</table>
+  <script>
+  const invoke = window.__TAURI__.invoke;
+  const forward = () => {
+    invoke('forward');
+  };
+  const backward = () => {
+    invoke('backward');
+  };
+  const right = () => {
+    invoke('right');
+  };
+  const left= () => {
+    invoke('left');
+  };
+  
+  
+  </script>
+  </body>
+</html>
